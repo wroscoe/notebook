@@ -11,3 +11,7 @@ _notebooks/.ipynb_checkpoints
 .netlify
 .tweet-cache
 __pycache__
+_posts/
+.idea/
+settings.ini
+images/copied_from_nb/
