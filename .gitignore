@@ -2,7 +2,7 @@
 ~*
 *~
 _site
-_posts
+_posts/*
 .sass-cache
 .jekyll-cache
 .jekyll-metadata

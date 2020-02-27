@@ -6,7 +6,7 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: wroscoe
+title: WRoscoe
 description: Thoughts dumped on the web.
 github_username: wroscoe
 # you can comment the below line out if your repo name is not different than your baseurl
@@ -15,6 +15,7 @@ github_repo: "notebook"
 # OPTIONAL: override baseurl and url if using a custom domain
 url: "https://www.wroscoe.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/" # the subpath of your site, e.g. "/blog".  WARNING: if you are not using a custom domain, the baseurl *must* be set to your repo name.
+permalink: /:year/:title:output_ext
 
 # Email and twitter are optional:
 email: 
