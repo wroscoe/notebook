@@ -1,9 +1,9 @@
 ---
 toc: false
-description: My first macro economic prediction.
+description: Boomers consume sell assets and cause massive money printing.
 categories: [economy, bitcoin, stocks]
 ---
-# My prediction for the world economy. 
+# My prediction for the world economy (Oct 2019). 
 
 As an effort to hold my responsible for thinking rationally I'm publishing my prediction for the overall trend 
 of the global economy. I know very little about economics so please don't use this as investment advice.
