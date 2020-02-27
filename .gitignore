@@ -3,6 +3,7 @@
 *~
 _site
 _posts/*
+images/images
 .sass-cache
 .jekyll-cache
 .jekyll-metadata

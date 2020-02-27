@@ -1,6 +1,6 @@
 ---
 toc: false
-description: Boomers consume sell assets and cause massive money printing.
+description: Boomers sell their assets and cause massive money printing.
 categories: [economy, bitcoin, stocks]
 ---
 # My prediction for the world economy (Oct 2019). 
