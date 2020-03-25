@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Line detection autopilot using Python + OpenCV. | WRoscoe</title>
+<title>Line detection autopilot using Python + OpenCV. | Will Roscoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Line detection autopilot using Python + OpenCV." />
 <meta property="og:locale" content="en_US" />
@@ -11,7 +11,7 @@
 <meta property="og:description" content="Line detection autopilot for DIYRobocars using OpenCV (python port of CompoundEye)" />
 <link rel="canonical" href="https://www.wroscoe.com/2017/port_compound_eye.html" />
 <meta property="og:url" content="https://www.wroscoe.com/2017/port_compound_eye.html" />
-<meta property="og:site_name" content="WRoscoe" />
+<meta property="og:site_name" content="Will Roscoe" />
 <meta property="og:image" content="https://www.wroscoe.com/images/copied_from_nb/donkeycar/compound_eye_race.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-02-02T00:00:00-06:00" />
@@ -21,7 +21,7 @@
 
   <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="WRoscoe" />
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="Will Roscoe" />
 
   <script>
   function wrap_img(fn) {
@@ -57,7 +57,7 @@
   </script>
 </head><body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">WRoscoe</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Will Roscoe</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -134,7 +134,7 @@
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Load-Images">Load Images<a class="anchor-link" href="#Load-Images">&#182;</a></h2>
+<h2 id="Load-Images">Load Images<a class="anchor-link" href="#Load-Images"> </a></h2>
 </div>
 </div>
 </div>
@@ -5310,7 +5310,7 @@ cGoFQRAEQRAEQRAEQRAEn45wagVBEARBEARBEARBEASfjv8CuaJpDBpGh7wAAAAASUVORK5CYII=
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Find-Lines">Find Lines<a class="anchor-link" href="#Find-Lines">&#182;</a></h2><p>Now that we have our pictures loaded, lets find the lines of the course.</p>
+<h2 id="Find-Lines">Find Lines<a class="anchor-link" href="#Find-Lines"> </a></h2><p>Now that we have our pictures loaded, lets find the lines of the course.</p>
 
 </div>
 </div>
@@ -9707,7 +9707,7 @@ HA6Hw+FwOBwOh8PhcHw4/G/o+WOWAQptnQAAAABJRU5ErkJggg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Get-a-birds-eye-view-of-the-lines">Get a birds eye view of the lines<a class="anchor-link" href="#Get-a-birds-eye-view-of-the-lines">&#182;</a></h2><p>To calculate the steering angle we'll use a perspective transform to simulate a birds eye view from the tip. This way we can calculate the actual angle of the line relative to the car.</p>
+<h2 id="Get-a-birds-eye-view-of-the-lines">Get a birds eye view of the lines<a class="anchor-link" href="#Get-a-birds-eye-view-of-the-lines"> </a></h2><p>To calculate the steering angle we'll use a perspective transform to simulate a birds eye view from the tip. This way we can calculate the actual angle of the line relative to the car.</p>
 <p>The first step is to calculate the required transform from the camera angle to a top view. OpenCV provides an easy function to do this if you can provide a rectangle before and after the transform.</p>
 <ol>
 <li>Find the corners of a rectangle on the road.</li>
@@ -15656,7 +15656,7 @@ KposUxRFURRFURRFURRFUZTKfwJms7v5jOGkbwAAAABJRU5ErkJggg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Calculate-steering-angles">Calculate steering angles<a class="anchor-link" href="#Calculate-steering-angles">&#182;</a></h2>
+<h2 id="Calculate-steering-angles">Calculate steering angles<a class="anchor-link" href="#Calculate-steering-angles"> </a></h2>
 </div>
 </div>
 </div>
@@ -15674,7 +15674,7 @@ KposUxRFURRFURRFURRFUZTKfwJms7v5jOGkbwAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Find-lines">Find lines<a class="anchor-link" href="#Find-lines">&#182;</a></h3><p>Here we are createing a single function to extract the lines from the image and transform them to a birds eye perspective.</p>
+<h3 id="Find-lines">Find lines<a class="anchor-link" href="#Find-lines"> </a></h3><p>Here we are createing a single function to extract the lines from the image and transform them to a birds eye perspective.</p>
 
 </div>
 </div>
@@ -15855,7 +15855,7 @@ KposUxRFURRFURRFURRFUZTKfwJms7v5jOGkbwAAAABJRU5ErkJggg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bring-it-all-together">Bring it all together<a class="anchor-link" href="#Bring-it-all-together">&#182;</a></h2><p>This performs the steering calculations for every image.</p>
+<h2 id="Bring-it-all-together">Bring it all together<a class="anchor-link" href="#Bring-it-all-together"> </a></h2><p>This performs the steering calculations for every image.</p>
 
 </div>
 </div>
@@ -15895,7 +15895,7 @@ KposUxRFURRFURRFURRFUZTKfwJms7v5jOGkbwAAAABJRU5ErkJggg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Analyze-Results">Analyze Results<a class="anchor-link" href="#Analyze-Results">&#182;</a></h2><p>Now lets see how this looks compared to actual driving data. Here is the actual steering angle compared with the steering angel given by the this line detection algorthim. Its noisy but directionally accurate.</p>
+<h2 id="Analyze-Results">Analyze Results<a class="anchor-link" href="#Analyze-Results"> </a></h2><p>Now lets see how this looks compared to actual driving data. Here is the actual steering angle compared with the steering angel given by the this line detection algorthim. Its noisy but directionally accurate.</p>
 
 </div>
 </div>
@@ -16899,7 +16899,7 @@ gg==
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">&#182;</a></h2><ul>
+<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps"> </a></h2><ul>
 <li>This may work well for differential steering vehicles but not for mechanical steering. Adding smoothing over time would help make this more stable.</li>
 <li>Write a training function that accepts training data and minimizes error between actual and predicted by tuning the line detection parameters. </li>
 </ul>
@@ -16909,7 +16909,7 @@ gg==
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Build-your-own-DIYRobocar.">Build your own DIYRobocar.<a class="anchor-link" href="#Build-your-own-DIYRobocar.">&#182;</a></h4><p>For \$100-\$200 you can build your own self driving car. The <a href="https://github.com/wroscoe/donkey">Donkey</a> repository is a good place to start for building structions and will save you time with the cruft / data plumbing.</p>
+<h4 id="Build-your-own-DIYRobocar.">Build your own DIYRobocar.<a class="anchor-link" href="#Build-your-own-DIYRobocar."> </a></h4><p>For \$100-\$200 you can build your own self driving car. The <a href="https://github.com/wroscoe/donkey">Donkey</a> repository is a good place to start for building structions and will save you time with the cruft / data plumbing.</p>
 
 </div>
 </div>
@@ -16925,12 +16925,12 @@ gg==
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">WRoscoe</h2>
+    <h2 class="footer-heading">Will Roscoe</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">WRoscoe</li></ul>
+          <li class="p-name">Will Roscoe</li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list">

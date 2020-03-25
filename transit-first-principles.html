@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Exploring first principles of transit systems through simulation. | WRoscoe</title>
+<title>Exploring first principles of transit systems through simulation. | Will Roscoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Exploring first principles of transit systems through simulation." />
 <meta property="og:locale" content="en_US" />
@@ -11,7 +11,7 @@
 <meta property="og:description" content="Exploring what is always true in transit through simulations." />
 <link rel="canonical" href="https://www.wroscoe.com/transit-first-principles.html" />
 <meta property="og:url" content="https://www.wroscoe.com/transit-first-principles.html" />
-<meta property="og:site_name" content="WRoscoe" />
+<meta property="og:site_name" content="Will Roscoe" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-09-08T00:00:00-05:00" />
 <script type="application/ld+json">
@@ -20,7 +20,7 @@
 
   <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="WRoscoe" />
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="Will Roscoe" />
 
   <script>
   function wrap_img(fn) {
@@ -56,7 +56,7 @@
   </script>
 </head><body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">WRoscoe</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Will Roscoe</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -126,25 +126,25 @@
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Approach">Approach<a class="anchor-link" href="#Approach">&#182;</a></h2><p>This is a difficult problem because there are many factors that influence the behavior of a transit system. To simplify the simulation, we'll only model the most essentional objects and processs of transit. 
+<h2 id="Approach">Approach<a class="anchor-link" href="#Approach"> </a></h2><p>This is a difficult problem because there are many factors that influence the behavior of a transit system. To simplify the simulation, we'll only model the most essentional objects and processs of transit. 
 First lets define the terms we'll be using:</p>
-<h4 id="Objects">Objects<a class="anchor-link" href="#Objects">&#182;</a></h4><ol>
+<h4 id="Objects">Objects<a class="anchor-link" href="#Objects"> </a></h4><ol>
 <li><strong>rider</strong> - a person with a destination (end stop)</li>
 <li><strong>vehicle</strong> - the container that moves riders to their end stop along a path</li>
 <li><strong>path</strong> - how vehicles can move between stops</li>
 <li><strong>stop</strong> - a point along a route where a vehicle can load/unload riders</li>
 </ol>
-<h4 id="Processes">Processes<a class="anchor-link" href="#Processes">&#182;</a></h4><ol>
+<h4 id="Processes">Processes<a class="anchor-link" href="#Processes"> </a></h4><ol>
 <li><strong>move</strong> - a vehicle has to move along a route</li>
 <li><strong>unload vehicle</strong> - riders transfered from a vehicle to a stop. </li>
 <li><strong>load vehicle</strong> - riders transfered from stop to vehicle. </li>
 <li><strong>create new riders</strong> - create riders that are waiting to be picked up</li>
 </ol>
-<h4 id="Key-Measurments">Key Measurments<a class="anchor-link" href="#Key-Measurments">&#182;</a></h4><ul>
+<h4 id="Key-Measurments">Key Measurments<a class="anchor-link" href="#Key-Measurments"> </a></h4><ul>
 <li><strong>trip time</strong> - time for rider to get to their destination</li>
 <li><strong>flow</strong> - riders passing a point over time (usually measured at each station)</li>
 </ul>
-<h4 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h4><p>One thing that makes transit systems tricky is that they have so many variables. changing more than one of these at a time makes it dificutle to identify which variable has the effect.</p>
+<h4 id="Variables">Variables<a class="anchor-link" href="#Variables"> </a></h4><p>One thing that makes transit systems tricky is that they have so many variables. changing more than one of these at a time makes it dificutle to identify which variable has the effect.</p>
 <blockquote><p>vehicle frequency -  vehicle capacity - number of vehicles - vehicle schedule - path shapes - number of stations - time between stations -  time vehicles spend at stop -  number of new passengers - destinations of new passengers,</p>
 </blockquote>
 
@@ -153,7 +153,7 @@ First lets define the terms we'll be using:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="TLDR---What-we've-learned.">TLDR - What we've learned.<a class="anchor-link" href="#TLDR---What-we've-learned.">&#182;</a></h2><p>This document includes working python code you can run and tweak on a Jupyter Notebook. Here are the key takeaways from the simulations of circular linear transit systems below:</p>
+<h2 id="TLDR---What-we've-learned.">TLDR - What we've learned.<a class="anchor-link" href="#TLDR---What-we've-learned."> </a></h2><p>This document includes working python code you can run and tweak on a Jupyter Notebook. Here are the key takeaways from the simulations of circular linear transit systems below:</p>
 <blockquote><p>Larger vehicles <strong>sometimes</strong> reduce trip times. At a point icreasing the vehicle capacity just adds empty seats.</p>
 <p>Higher vehicle frequency <strong>always</strong> reduces trip times.</p>
 <p>System flow is always less than the sysem rider demand.</p>
@@ -164,7 +164,7 @@ First lets define the terms we'll be using:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What's-missing.">What's missing.<a class="anchor-link" href="#What's-missing.">&#182;</a></h2><p>This document only models a fraction of the potential transit systems. You can fork and improve this document <a href="https://github.com/wroscoe/notebooks/blob/master/First%20Principles%20of%20Transit.ipynb">on github</a>.</p>
+<h2 id="What's-missing.">What's missing.<a class="anchor-link" href="#What's-missing."> </a></h2><p>This document only models a fraction of the potential transit systems. You can fork and improve this document <a href="https://github.com/wroscoe/notebooks/blob/master/First%20Principles%20of%20Transit.ipynb">on github</a>.</p>
 <ul>
 <li>How do linear and point to point paths change system behavior.</li>
 <li>How does the end stop demand distributions affect system performance.</li>
@@ -179,13 +179,13 @@ First lets define the terms we'll be using:</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Model">Model<a class="anchor-link" href="#Model">&#182;</a></h1>
+<h1 id="Model">Model<a class="anchor-link" href="#Model"> </a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Riders">Riders<a class="anchor-link" href="#Riders">&#182;</a></h2><p>To measure wait time and efficiency we need to know where and when people want to go. For this I represent a rider as a tuple (destination stop, time trip began) and group them into a list.</p>
+<h2 id="Riders">Riders<a class="anchor-link" href="#Riders"> </a></h2><p>To measure wait time and efficiency we need to know where and when people want to go. For this I represent a rider as a tuple (destination stop, time trip began) and group them into a list.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Stops">Stops<a class="anchor-link" href="#Stops">&#182;</a></h2><p>Stops are points distributed long a path where riders can waite to board vehicles.</p>
+<h2 id="Stops">Stops<a class="anchor-link" href="#Stops"> </a></h2><p>Stops are points distributed long a path where riders can waite to board vehicles.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Paths">Paths<a class="anchor-link" href="#Paths">&#182;</a></h2><p>Paths are a representation of how a vehicle can travel.</p>
+<h2 id="Paths">Paths<a class="anchor-link" href="#Paths"> </a></h2><p>Paths are a representation of how a vehicle can travel.</p>
 
 </div>
 </div>
@@ -460,7 +460,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Vehicles">Vehicles<a class="anchor-link" href="#Vehicles">&#182;</a></h2><p>Vehicles load riders at stops and move along the path to another stop to unload riders.</p>
+<h2 id="Vehicles">Vehicles<a class="anchor-link" href="#Vehicles"> </a></h2><p>Vehicles load riders at stops and move along the path to another stop to unload riders.</p>
 
 </div>
 </div>
@@ -580,7 +580,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generators">Generators<a class="anchor-link" href="#Generators">&#182;</a></h2><p>Here are helper methods to create our objects.</p>
+<h2 id="Generators">Generators<a class="anchor-link" href="#Generators"> </a></h2><p>Here are helper methods to create our objects.</p>
 
 </div>
 </div>
@@ -636,7 +636,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Recorder">Data Recorder<a class="anchor-link" href="#Data-Recorder">&#182;</a></h2><p>Instead of using print statements, here is a simple recorder class to save data dictionaries and return them as a pandas DataFrame for easy ploting and metrics.</p>
+<h2 id="Data-Recorder">Data Recorder<a class="anchor-link" href="#Data-Recorder"> </a></h2><p>Instead of using print statements, here is a simple recorder class to save data dictionaries and return them as a pandas DataFrame for easy ploting and metrics.</p>
 
 </div>
 </div>
@@ -735,7 +735,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Simulate.">Simulate.<a class="anchor-link" href="#Simulate.">&#182;</a></h2><p>To move through time, our simulation updates all our objects in every time. In this case we move each train forward in time 1 step, if the</p>
+<h2 id="Simulate.">Simulate.<a class="anchor-link" href="#Simulate."> </a></h2><p>To move through time, our simulation updates all our objects in every time. In this case we move each train forward in time 1 step, if the</p>
 
 </div>
 </div>
@@ -893,7 +893,7 @@ First lets define the terms we'll be using:</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Visualize-the-number-of-riders-waiting-at-each-stop.">Visualize the number of riders waiting at each stop.<a class="anchor-link" href="#Visualize-the-number-of-riders-waiting-at-each-stop.">&#182;</a></h2><p>Here are we visualize the number of riders at each stop over time. The capacity of the system does not support the rider demand because the number of riders waiting increases over time.</p>
+<h2 id="Visualize-the-number-of-riders-waiting-at-each-stop.">Visualize the number of riders waiting at each stop.<a class="anchor-link" href="#Visualize-the-number-of-riders-waiting-at-each-stop."> </a></h2><p>Here are we visualize the number of riders at each stop over time. The capacity of the system does not support the rider demand because the number of riders waiting increases over time.</p>
 
 </div>
 </div>
@@ -1579,7 +1579,7 @@ gg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Visualize-the-affects-of-a-variable-on-system.">Visualize the affects of a variable on system.<a class="anchor-link" href="#Visualize-the-affects-of-a-variable-on-system.">&#182;</a></h2><p>The graph above only shows the system perforace of one variable, rider backlog. Let's create a function to show a series of visuals for simulations run with different variables.</p>
+<h2 id="Visualize-the-affects-of-a-variable-on-system.">Visualize the affects of a variable on system.<a class="anchor-link" href="#Visualize-the-affects-of-a-variable-on-system."> </a></h2><p>The graph above only shows the system perforace of one variable, rider backlog. Let's create a function to show a series of visuals for simulations run with different variables.</p>
 
 </div>
 </div>
@@ -1647,7 +1647,7 @@ gg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Vehicle-Capacity">Vehicle Capacity<a class="anchor-link" href="#Vehicle-Capacity">&#182;</a></h3>
+<h3 id="Vehicle-Capacity">Vehicle Capacity<a class="anchor-link" href="#Vehicle-Capacity"> </a></h3>
 </div>
 </div>
 </div>
@@ -3930,7 +3930,7 @@ Rsj/BzhPZqByXAUfAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Vehicle-Frequency">Vehicle Frequency<a class="anchor-link" href="#Vehicle-Frequency">&#182;</a></h3>
+<h3 id="Vehicle-Frequency">Vehicle Frequency<a class="anchor-link" href="#Vehicle-Frequency"> </a></h3>
 </div>
 </div>
 </div>
@@ -5188,7 +5188,7 @@ RK5CYII=
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="New-riders-from-distributions-of-destimation-demand.">New riders from distributions of destimation demand.<a class="anchor-link" href="#New-riders-from-distributions-of-destimation-demand.">&#182;</a></h2>
+<h2 id="New-riders-from-distributions-of-destimation-demand.">New riders from distributions of destimation demand.<a class="anchor-link" href="#New-riders-from-distributions-of-destimation-demand."> </a></h2>
 </div>
 </div>
 </div>
@@ -5220,7 +5220,7 @@ RK5CYII=
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Metrics">Metrics<a class="anchor-link" href="#Metrics">&#182;</a></h2><p>Even these graphs aren't arent'enough to compare the changes relative to each other. To do this, we'll generate all the combinations simulation variables we want to measure, run the simulation with those variables and then record the measurements of the last 50 timesteps.</p>
+<h2 id="Metrics">Metrics<a class="anchor-link" href="#Metrics"> </a></h2><p>Even these graphs aren't arent'enough to compare the changes relative to each other. To do this, we'll generate all the combinations simulation variables we want to measure, run the simulation with those variables and then record the measurements of the last 50 timesteps.</p>
 
 </div>
 </div>
@@ -5493,7 +5493,7 @@ RK5CYII=
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interpreting-the-Results">Interpreting the Results<a class="anchor-link" href="#Interpreting-the-Results">&#182;</a></h2>
+<h2 id="Interpreting-the-Results">Interpreting the Results<a class="anchor-link" href="#Interpreting-the-Results"> </a></h2>
 </div>
 </div>
 </div>
@@ -6081,12 +6081,12 @@ ghsAAEDnBDcAAIDOCW4AAACd+/8WfENoTNI83wAAAABJRU5ErkJggg==
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">WRoscoe</h2>
+    <h2 class="footer-heading">Will Roscoe</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">WRoscoe</li></ul>
+          <li class="p-name">Will Roscoe</li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list">

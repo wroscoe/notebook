@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>January 2017 DIYRobocar Race Debrief | WRoscoe</title>
+<title>January 2017 DIYRobocar Race Debrief | Will Roscoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="January 2017 DIYRobocar Race Debrief" />
 <meta property="og:locale" content="en_US" />
@@ -11,7 +11,7 @@
 <meta property="og:description" content="How to not use your time at the next DIYRobocar race. Lessons learned from my first race." />
 <link rel="canonical" href="https://www.wroscoe.com/2017/jan_diyrobocar_race_debrief.html" />
 <meta property="og:url" content="https://www.wroscoe.com/2017/jan_diyrobocar_race_debrief.html" />
-<meta property="og:site_name" content="WRoscoe" />
+<meta property="og:site_name" content="Will Roscoe" />
 <meta property="og:image" content="https://www.wroscoe.com/images/copied_from_nb/donkeycar/adam_driving.jpeg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-01-22T00:00:00-06:00" />
@@ -21,7 +21,7 @@
 
   <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="WRoscoe" />
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="Will Roscoe" />
 
   <script>
   function wrap_img(fn) {
@@ -57,7 +57,7 @@
   </script>
 </head><body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">WRoscoe</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Will Roscoe</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -145,25 +145,25 @@
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Beyond-bugs,-how-can-do-better-at-these-races?">Beyond bugs, how can do better at these races?<a class="anchor-link" href="#Beyond-bugs,-how-can-do-better-at-these-races?">&#182;</a></h3><p>On a race day, we have 4-6 hours to take a proven car and autopilot and train it to perform on a new track. The more efficiently we can improve the autopilot performance the better we’ll do. Here’s an overview problems I saw today and proposals how to fix them.  Specific issues and solutions live in github issues.</p>
-<h4 id="Many-steps-are-required-to-update-an-driving-model.">Many steps are required to update an driving model.<a class="anchor-link" href="#Many-steps-are-required-to-update-an-driving-model.">&#182;</a></h4><p>At one point today I had 20+ terminal windows open because changing the autopilot requires many useless “plumbing” steps. These steps can be automated or made easier with command line arguments or web interface.</p>
+<h3 id="Beyond-bugs,-how-can-do-better-at-these-races?">Beyond bugs, how can do better at these races?<a class="anchor-link" href="#Beyond-bugs,-how-can-do-better-at-these-races?"> </a></h3><p>On a race day, we have 4-6 hours to take a proven car and autopilot and train it to perform on a new track. The more efficiently we can improve the autopilot performance the better we’ll do. Here’s an overview problems I saw today and proposals how to fix them.  Specific issues and solutions live in github issues.</p>
+<h4 id="Many-steps-are-required-to-update-an-driving-model.">Many steps are required to update an driving model.<a class="anchor-link" href="#Many-steps-are-required-to-update-an-driving-model."> </a></h4><p>At one point today I had 20+ terminal windows open because changing the autopilot requires many useless “plumbing” steps. These steps can be automated or made easier with command line arguments or web interface.</p>
 <ul>
 <li>Switching models requires restarting the server</li>
 <li>It's difficult to remember which session was the good session. </li>
 <li>Combining sessions is a separate script. </li>
 </ul>
-<h4 id="Driving-is-required-to-test-models.">Driving is required to test models.<a class="anchor-link" href="#Driving-is-required-to-test-models.">&#182;</a></h4><p>Since updating and driving an autopilot takes time, we need to make sure that our changes actually improve the autopilot before we test it on the track. A trusted performance measurement is needed at the time of training. This could be a combination of the error on a validation dataset and a visual showing how closely predicted values were to actual.</p>
-<h4 id="There-is-no-way-to-debug-an-autopilot.">There is no way to debug an autopilot.<a class="anchor-link" href="#There-is-no-way-to-debug-an-autopilot.">&#182;</a></h4><p>Currently an autopilot either works or it doesn’t. Driving performance are the only clues to help us understand what’s going wrong. Helpful clues would include:
+<h4 id="Driving-is-required-to-test-models.">Driving is required to test models.<a class="anchor-link" href="#Driving-is-required-to-test-models."> </a></h4><p>Since updating and driving an autopilot takes time, we need to make sure that our changes actually improve the autopilot before we test it on the track. A trusted performance measurement is needed at the time of training. This could be a combination of the error on a validation dataset and a visual showing how closely predicted values were to actual.</p>
+<h4 id="There-is-no-way-to-debug-an-autopilot.">There is no way to debug an autopilot.<a class="anchor-link" href="#There-is-no-way-to-debug-an-autopilot."> </a></h4><p>Currently an autopilot either works or it doesn’t. Driving performance are the only clues to help us understand what’s going wrong. Helpful clues would include:
 Adding a visual showing what the network is queuing off of would help.
 Lag times
 Predicted vs actual overlaid on image.</p>
-<h4 id="Common-problems-that-don&#8217;t-have-obvious-solutions.">Common problems that don&#8217;t have obvious solutions.<a class="anchor-link" href="#Common-problems-that-don&#8217;t-have-obvious-solutions.">&#182;</a></h4><p>Even after a common problem has been identified, there’s no standard solution to fix the problem. “Agile training” could be used to correct the autopilot by creating more training data where the autopilot fails.</p>
+<h4 id="Common-problems-that-don&#8217;t-have-obvious-solutions.">Common problems that don&#8217;t have obvious solutions.<a class="anchor-link" href="#Common-problems-that-don&#8217;t-have-obvious-solutions."> </a></h4><p>Even after a common problem has been identified, there’s no standard solution to fix the problem. “Agile training” could be used to correct the autopilot by creating more training data where the autopilot fails.</p>
 <ul>
 <li>Vehicle doesn’t turn sharp enough.</li>
 <li>Vehicle doesn’t turn at all on a corner.</li>
 <li>Vehicle goes to slow.</li>
 </ul>
-<h4 id="There-is-no-easy-way-to-clean-training-data-on-a-remote-instance.">There is no easy way to clean training data on a remote instance.<a class="anchor-link" href="#There-is-no-easy-way-to-clean-training-data-on-a-remote-instance.">&#182;</a></h4><p>Training on bad data makes bad autopilots. To learn where bad training data exists you need to see the image the recorded steering values, This is impossible on a CLI but would be possible through a web interface.</p>
+<h4 id="There-is-no-easy-way-to-clean-training-data-on-a-remote-instance.">There is no easy way to clean training data on a remote instance.<a class="anchor-link" href="#There-is-no-easy-way-to-clean-training-data-on-a-remote-instance."> </a></h4><p>Training on bad data makes bad autopilots. To learn where bad training data exists you need to see the image the recorded steering values, This is impossible on a CLI but would be possible through a web interface.</p>
 
 </div>
 </div>
@@ -202,12 +202,12 @@ Predicted vs actual overlaid on image.</p>
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">WRoscoe</h2>
+    <h2 class="footer-heading">Will Roscoe</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">WRoscoe</li></ul>
+          <li class="p-name">Will Roscoe</li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list">

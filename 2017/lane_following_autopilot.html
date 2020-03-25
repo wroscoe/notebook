@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Lane Following Autopilot with Keras &amp; Tensorflow. | WRoscoe</title>
+<title>Lane Following Autopilot with Keras &amp; Tensorflow. | Will Roscoe</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Lane Following Autopilot with Keras &amp; Tensorflow." />
 <meta property="og:locale" content="en_US" />
@@ -11,7 +11,7 @@
 <meta property="og:description" content="Create a keras model that accepts images and outputs steering angles so that it can control a car and keep it between two white lines." />
 <link rel="canonical" href="https://www.wroscoe.com/2017/lane_following_autopilot.html" />
 <meta property="og:url" content="https://www.wroscoe.com/2017/lane_following_autopilot.html" />
-<meta property="og:site_name" content="WRoscoe" />
+<meta property="og:site_name" content="Will Roscoe" />
 <meta property="og:image" content="https://www.wroscoe.com/images/copied_from_nb/donkeycar/lane_following.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-01-12T00:00:00-06:00" />
@@ -21,7 +21,7 @@
 
   <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="WRoscoe" />
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://www.wroscoe.com/feed.xml" title="Will Roscoe" />
 
   <script>
   function wrap_img(fn) {
@@ -57,7 +57,7 @@
   </script>
 </head><body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">WRoscoe</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Will Roscoe</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -158,7 +158,7 @@
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Get-the-driving-data">Get the driving data<a class="anchor-link" href="#Get-the-driving-data">&#182;</a></h3><p>The dataset is composed of ~7900 images and steering angles collected as I manually drove the car. About 2/3 of the images are with the car between the lines. The other third is of the car starting off course and correcting by driving back to between the lines.</p>
+<h3 id="Get-the-driving-data">Get the driving data<a class="anchor-link" href="#Get-the-driving-data"> </a></h3><p>The dataset is composed of ~7900 images and steering angles collected as I manually drove the car. About 2/3 of the images are with the car between the lines. The other third is of the car starting off course and correcting by driving back to between the lines.</p>
 
 </div>
 </div>
@@ -2555,7 +2555,7 @@ ANGDDjrooIMOeiIdIHrQQQcddNBBT6QDRA866KCDDjroifT/A7V30rpvtJ/8AAAAAElFTkSuQmCC
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Split-Data">Split Data<a class="anchor-link" href="#Split-Data">&#182;</a></h3>
+<h3 id="Split-Data">Split Data<a class="anchor-link" href="#Split-Data"> </a></h3>
 </div>
 </div>
 </div>
@@ -2666,7 +2666,7 @@ ANGDDjrooIMOeiIdIHrQQQcddNBBT6QDRA866KCDDjroifT/A7V30rpvtJ/8AAAAAElFTkSuQmCC
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Augment-Training-Data">Augment Training Data<a class="anchor-link" href="#Augment-Training-Data">&#182;</a></h3><p>To double our training data and prevent steering bias, we flip each image and steering angle and add it to the dataset. There are <a href="https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9#.725xwvqee">additional ways</a> to augment driving data using translations and fake shadows but I didn't use those for this autopilot.</p>
+<h3 id="Augment-Training-Data">Augment Training Data<a class="anchor-link" href="#Augment-Training-Data"> </a></h3><p>To double our training data and prevent steering bias, we flip each image and steering angle and add it to the dataset. There are <a href="https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9#.725xwvqee">additional ways</a> to augment driving data using translations and fake shadows but I didn't use those for this autopilot.</p>
 
 </div>
 </div>
@@ -2710,7 +2710,7 @@ ANGDDjrooIMOeiIdIHrQQQcddNBBT6QDRA866KCDDjroifT/A7V30rpvtJ/8AAAAAElFTkSuQmCC
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Build-a-driving-model">Build a driving model<a class="anchor-link" href="#Build-a-driving-model">&#182;</a></h3><p>This driving model will be an end-to-end neural network that accepts image arrays as input and outputs a steering angle between -90 (left) and 90 (right). To do this we'll use a 3 layer convolution network with one fully connected layer. This model is based off of <a href="https://github.com/otaviogood/carputer/blob/master/NeuralNet/convnetshared1.py">Otavio's Carputer</a> but does not produce a throttle value output, does not use past steering values as input into the model, and uses one less convolution layer.</p>
+<h3 id="Build-a-driving-model">Build a driving model<a class="anchor-link" href="#Build-a-driving-model"> </a></h3><p>This driving model will be an end-to-end neural network that accepts image arrays as input and outputs a steering angle between -90 (left) and 90 (right). To do this we'll use a 3 layer convolution network with one fully connected layer. This model is based off of <a href="https://github.com/otaviogood/carputer/blob/master/NeuralNet/convnetshared1.py">Otavio's Carputer</a> but does not produce a throttle value output, does not use past steering values as input into the model, and uses one less convolution layer.</p>
 
 </div>
 </div>
@@ -2841,7 +2841,7 @@ ________________________________________________________________________________
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Train-the-model.">Train the model.<a class="anchor-link" href="#Train-the-model.">&#182;</a></h3><p>I've learned the hard way that even if everything to this point is perfect, your autopilot won't work if you don't train it correctly. The biggest problem I ran into was over fitting the model so that it would not work in evenlly slightly different scenarios. Here are 2 Keras callbacks that will save you time.</p>
+<h3 id="Train-the-model.">Train the model.<a class="anchor-link" href="#Train-the-model."> </a></h3><p>I've learned the hard way that even if everything to this point is perfect, your autopilot won't work if you don't train it correctly. The biggest problem I ran into was over fitting the model so that it would not work in evenlly slightly different scenarios. Here are 2 Keras callbacks that will save you time.</p>
 <p><strong>Warning - This will take a long time (3hrs) if only using a CPU</strong></p>
 <p>I ran this notebook on my Dell XPS notebook that does not have a CUDA compatible GPU so it's very slow and freezes. To speed up training you can uses a EC2 instance with a GPU. Several instance images exist with Keras and Tensorflow already loaded.</p>
 
@@ -2940,7 +2940,7 @@ Epoch 4/4
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Evaluate-Performance">Evaluate Performance<a class="anchor-link" href="#Evaluate-Performance">&#182;</a></h3><p>We  can check if our models predictions are reasonable by plotting the predictions vs the actual values. The first graph shows that there is a learned relationship in our test data (not seen by model during training).</p>
+<h3 id="Evaluate-Performance">Evaluate Performance<a class="anchor-link" href="#Evaluate-Performance"> </a></h3><p>We  can check if our models predictions are reasonable by plotting the predictions vs the actual values. The first graph shows that there is a learned relationship in our test data (not seen by model during training).</p>
 
 </div>
 </div>
@@ -4494,7 +4494,7 @@ BYeiKIqiKFVHBYeiKIqiKFXn/wMDDquWzumltgAAAABJRU5ErkJggg==
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Next-steps">Next steps<a class="anchor-link" href="#Next-steps">&#182;</a></h2><ul>
+<h2 id="Next-steps">Next steps<a class="anchor-link" href="#Next-steps"> </a></h2><ul>
 <li><strong>Improve Model</strong> This model is naive because it doesn't use past values to help predict the future. We could experiment with the model by feeding past steering angles as inputs to the model, add a recurrent layer, or just change the structure of the convolution layers. </li>
 <li><strong>Add more data</strong> This model will improve as we add more driving data. </li>
 <li><strong>Predict throttle outputs</strong> Currently the autopilot only steers and maintains a constant speed. A more sophisticated model would speed up on straightaways and slow down before curbs.</li>
@@ -4514,12 +4514,12 @@ BYeiKIqiKFVHBYeiKIqiKFXn/wMDDquWzumltgAAAABJRU5ErkJggg==
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">WRoscoe</h2>
+    <h2 class="footer-heading">Will Roscoe</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">WRoscoe</li></ul>
+          <li class="p-name">Will Roscoe</li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list">
